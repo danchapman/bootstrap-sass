@@ -131,8 +131,8 @@
 
 // Navbar form
 .navbar-form {
-  .form-inline();
-  .navbar-vertical-align(34px); // Vertically center in navbar
+  @include form-inline();
+  @include navbar-vertical-align(34px); // Vertically center in navbar
 }
 
 // Dropdown menus
@@ -321,7 +321,7 @@
 // Add a class to make any element properly align itself vertically within the navbars.
 
 .navbar-text {
-  .navbar-vertical-align($line-height-computed);
+  @include navbar-vertical-align($line-height-computed);
 }
 
 
