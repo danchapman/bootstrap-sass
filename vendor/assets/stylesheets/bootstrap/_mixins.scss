@@ -455,7 +455,7 @@
 // Small grid columns
 
 // Generate columns
-@mixin generate-grid-columns(@grid-columns) {
+@mixin generate-grid-columns($grid-columns) {
   @include col-sm-X($grid-columns)
 }
 
