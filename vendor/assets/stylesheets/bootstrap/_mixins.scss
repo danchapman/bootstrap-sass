@@ -486,7 +486,7 @@
 @mixin col-lg-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-lg-#{$index} { @include col-lg-($index $grid-columns); }
+    .col-lg-#{$index} { @include col-lg-($index, $grid-columns); }
     $index: $index - 1;
   }
 }
