@@ -28,7 +28,7 @@
 }
 
 // Generate small grid classes first
-.generate-grid-columns($grid-columns);
+@include generate-grid-columns($grid-columns);
 
 // Then generate the larger grid classes via media query
 @media screen and (min-width: $screen-small) {
