@@ -100,8 +100,8 @@
   }
   // pulling this in mainly for less shorthand
   &.nav-justified {
-    @extend .nav-justified;
-    @extend .nav-tabs-justified;
+    @extend nav-justified;
+    @include nav-tabs-justified;
   }
 }
 
@@ -151,7 +151,7 @@
 // Justified nav links
 // -------------------------
 
-.nav-justified {
+@mixin nav-justified {
   width: 100%;
   > li {
     float: none;
@@ -164,7 +164,7 @@
 }
 
 // Move borders to anchors instead of bottom of list
-.nav-tabs-justified () {
+@mixin nav-tabs-justified () {
   border-bottom: 0;
   > li > a {
     border-bottom: 1px solid #ddd;
