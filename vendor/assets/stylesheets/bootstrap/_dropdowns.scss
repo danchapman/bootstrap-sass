@@ -91,7 +91,7 @@
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  color: $dropdown-link-color-active;
+  color: $dropdown-link-active-color;
   text-decoration: none;
   outline: 0;
   @include gradient-vertical($dropdown-link-active-bg, darken($dropdown-link-active-bg, 5%));
