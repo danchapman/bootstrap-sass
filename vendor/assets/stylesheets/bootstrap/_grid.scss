@@ -32,7 +32,7 @@
 
 // Then generate the larger grid classes via media query
 @media screen and (min-width: $screen-small) {
-  .generate-large-grid-columns($grid-columns);
+  @include generate-large-grid-columns($grid-columns);
 }
 
 
