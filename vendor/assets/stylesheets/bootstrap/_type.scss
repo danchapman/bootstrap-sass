@@ -123,7 +123,7 @@ li {
 // List options
 
 // Unstyled keeps list items block level, just removes list-style
-.list-unstyled {
+@mixin list-unstyled {
   margin-left: 0;
   list-style: none;
 }
