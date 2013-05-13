@@ -101,7 +101,7 @@
   // pulling this in mainly for less shorthand
   &.nav-justified {
     @extend .nav-justified;
-    @include nav-tabs-justified;
+    @include nav-tabs-justified();
   }
 }
 
