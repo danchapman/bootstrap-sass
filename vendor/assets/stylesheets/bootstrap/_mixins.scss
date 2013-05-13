@@ -462,7 +462,7 @@
 @mixin col-sm-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-sm-#{$index} { .col-sm-($index, $grid-columns); }
+    .col-sm-#{$index} { @include col-sm-($index, $grid-columns); }
     @include col-sm-X(($index - 1));
     $index: $index - 1;
   }
@@ -487,7 +487,7 @@
 @mixin col-lg-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-lg-#{$index} { .col-lg-($index $grid-columns); }
+    .col-lg-#{$index} { @include col-lg-($index $grid-columns); }
     @include col-lg-X(($index - 1));
     $index: $index - 1;
   }
@@ -497,7 +497,7 @@
 @mixin col-offset-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-offset-#{$index} { .col-offset-($index, $grid-columns); }
+    .col-offset-#{$index} { @include col-offset-($index, $grid-columns); }
     @include col-offset-X(($index - 1));
     $index: $index - 1;
   }
@@ -507,7 +507,7 @@
 @mixin col-push-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-push-#{$index} { .col-push-($index, $grid-columns); }
+    .col-push-#{$index} { @include col-push-($index, $grid-columns); }
     @include col-push-X(($index - 1));
     $index: $index - 1;
   }
@@ -517,7 +517,7 @@
 @mixin col-pull-X ($grid-columns) {
   $index: $grid-columns;
   @while $index > 0 {
-    .col-pull-#{$index} { .col-pull-($index, $grid-columns); }
+    .col-pull-#{$index} { @include col-pull-($index, $grid-columns); }
     @include col-pull-X(($index - 1));
     $index: $index - 1;
   }
