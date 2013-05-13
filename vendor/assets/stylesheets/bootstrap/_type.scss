@@ -10,7 +10,7 @@ p {
   margin: 0 0 ($line-height-computed / 2);
 }
 .lead {
-  margin-bottom: $line-height-conputed;
+  margin-bottom: $line-height-computed;
   @include font-size(($font-size-base * 1.5));
   font-weight: 200;
   line-height: 1.4;
