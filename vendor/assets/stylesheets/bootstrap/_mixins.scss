@@ -500,7 +500,7 @@
   // Source ordering
   @mixin col-push-X ($index) {
     @if $index > 0 {
-      .col-push-#{$index} { $include col-push-($index); }
+      .col-push-#{$index} { @include col-push-($index); }
       @include col-push-X(($index - 1));
     } @else if ($index == 0) {}
   }
