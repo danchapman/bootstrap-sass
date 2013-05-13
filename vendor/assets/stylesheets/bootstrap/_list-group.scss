@@ -49,10 +49,10 @@
 
 // Custom content within linked items
 a.list-group-item {
-  @include list-group-item-heading {
+  .list-group-item-heading {
     color: #333;
   }
-  @include list-group-item-text {
+  .list-group-item-text {
     color: #555;
   }
 }
@@ -72,10 +72,10 @@ a.list-group-item.active {
   border-color: $list-group-active-border;
 
   // Force color to inherit for custom content
-  @include list-group-item-heading {
+  .list-group-item-heading {
     color: inherit;
   }
-  @include list-group-item-text {
+  .list-group-item-text {
     color: lighten($list-group-active-bg, 40%);
   }
 }
