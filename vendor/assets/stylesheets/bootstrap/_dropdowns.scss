@@ -82,7 +82,7 @@
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
   text-decoration: none;
-  color: $dropdown-link-color-hover;
+  color: $dropdown-link-hover-color;
   @include gradient-vertical($dropdown-link-hover-bg, darken($dropdown-link-hover-bg, 5%));
 }
 
