@@ -415,7 +415,7 @@
   	margin-left:  ($grid-gutter-width / -2);
   	margin-right: ($grid-gutter-width / -2);
   }
-  
+
 }
 // Generate the columns
 @mixin make-column($columns) {
@@ -453,83 +453,92 @@
 
 
 // Small grid columns
-@mixin generate-grid-columns($grid-columns) {
 
-  @mixin col-sm-X($index) {
-    @if $index > 0 {
-      .col-sm-#{$index} { @include col-sm-($index); }
-      @include col-sm-X(($index - 1));
-    } @else if ($index == 0) {}
-  }
+// Generate columns
+@mixin generate-grid-columns(@grid-columns) {
+  @include col-sm-X($grid-columns)
+}
 
-  // Generate columns
-  @include col-sm-X($grid-columns);
-
-  // Apply the styles
-  @mixin col-sm-($columns) {
-    width: percentage(($columns / $grid-columns));
+@mixin col-sm-X ($grid-columns) {
+  $index: $grid-columns;
+  @while $index > 0 {
+    .col-sm-#{$index} { .col-sm-($index, $grid-columns); }
+    @include col-sm-X(($index - 1));
+    $index: $index - 1;
   }
 }
 
+// Apply the styles
+@mixin col-sm-($columns, $grid-columns) {
+  width: percentage(($columns / $grid-columns));
+}
+
+
 // Large grid columns
+
+// Generate columns
 @mixin generate-large-grid-columns($grid-columns) {
-
-  @mixin col-lg-X ($index) {
-    @if $index > 0 {
-      .col-lg-#{$index} { @include col-lg-($index); }
-      @include col-lg-X(($index - 1));
-    } @else if ($index == 0) {}
-  }
-
-  // Generate the columns
   @include col-lg-X($grid-columns);
-
-  // Apply the styles
-  @mixin col-lg-($columns) {
-    width: percentage(($columns / $grid-columns));
-  }
-
-  // Offsets (gaps between columns)
-  @mixin col-offset-X ($index) {
-    @if $index > 0 {
-      .col-offset-#{$index} { @include col-offset-($index); }
-      @include col-offset-X(($index - 1));
-    } @else if ($index == 0) {}
-  }
-
-  // Source ordering
-  @mixin col-push-X ($index) {
-    @if $index > 0 {
-      .col-push-#{$index} { @include col-push-($index); }
-      @include col-push-X(($index - 1));
-    } @else if ($index == 0) {}
-  }
-
-  // Source ordering
-  @mixin col-pull-X ($index){
-    @if $index > 0 {
-      .col-pull-#{$index} { @include col-pull-($index); }
-      @include col-pull-X(($index - 1));
-    } @else if ($index == 0) {}
-  }
-
-  // Apply the styles
-  @mixin col-offset-($columns) {
-    margin-left: percentage(($columns / $grid-columns));
-  }
-  @mixin col-push-($columns) {
-    left: percentage(($columns / $grid-columns));
-  }
-  @mixin col-pull-($columns) {
-    right: percentage(($columns / $grid-columns));
-  }
-
-  // Generate .spanX and .offsetX
   @include col-offset-X($grid-columns);
   @include col-push-X($grid-columns);
   @include col-pull-X($grid-columns);
 }
 
+@mixin col-lg-X ($grid-columns) {
+  $index: $grid-columns;
+  @while $index > 0 {
+    .col-lg-#{$index} { .col-lg-($index $grid-columns); }
+    @include col-lg-X(($index - 1));
+    $index: $index - 1;
+  }
+}
+
+// Offsets (gaps between columns)
+@mixin col-offset-X ($grid-columns) {
+  $index: $grid-columns;
+  @while $index > 0 {
+    .col-offset-#{$index} { .col-offset-($index, $grid-columns); }
+    @include col-offset-X(($index - 1));
+    $index: $index - 1;
+  }
+}
+
+// Source Ordering
+@mixin col-push-X ($grid-columns) {
+  $index: $grid-columns;
+  @while $index > 0 {
+    .col-push-#{$index} { .col-push-($index, $grid-columns); }
+    @include col-push-X(($index - 1));
+    $index: $index - 1;
+  }
+}
+
+// Source Ordering
+@mixin col-pull-X ($grid-columns) {
+  $index: $grid-columns;
+  @while $index > 0 {
+    .col-pull-#{$index} { .col-pull-($index, $grid-columns); }
+    @include col-pull-X(($index - 1));
+    $index: $index - 1;
+  }
+}
+
+// Apply the Styles
+@mixin col-lg-($columns, $grid-columns) {
+  width: percentage(($columns / $grid-columns));
+}
+
+@mixin col-offset-($columns, $grid-columns) {
+  width: percentage(($columns / $grid-columns));
+}
+
+@mixin col-push-($columns, $grid-columns) {
+  width: percentage(($columns / $grid-columns));
+}
+
+@mixin col-pull-($columns, $grid-columns) {
+  width: percentage(($columns / $grid-columns));
+}
 
 
 // Framework mixins
