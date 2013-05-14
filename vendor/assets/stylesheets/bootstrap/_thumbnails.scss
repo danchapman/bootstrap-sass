@@ -13,7 +13,7 @@
   padding: 4px;
   line-height: $line-height-base;
   background-color: $thumbnail-bg;
-  border: 1px solid $thubmnail-border;
+  border: 1px solid $thumbnail-border;
   border-radius: $thumbnail-border-radius;
   @include transition(all .2s ease-in-out);
 }
