@@ -131,7 +131,7 @@
 
 // Navbar form
 .navbar-form {
-  @extend form-inline();
+  @extend .form-inline;
   @include navbar-vertical-align(34px); // Vertically center in navbar
 }
 
