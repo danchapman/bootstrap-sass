@@ -163,7 +163,7 @@
   li.dropdown.active > .dropdown-toggle,
   li.dropdown.open.active > .dropdown-toggle {
     background-color: $navbar-link-active-bg;
-    color: $navbar-link-color-active;
+    color: $navbar-link-active-color;
   }
   li.dropdown > .dropdown-toggle .caret {
     border-top-color: $navbar-link-color;
@@ -172,8 +172,8 @@
   li.dropdown.open > .dropdown-toggle .caret,
   li.dropdown.active > .dropdown-toggle .caret,
   li.dropdown.open.active > .dropdown-toggle .caret {
-    border-top-color: $navbar-link-color-active;
-    border-bottom-color: $navbar-link-color-active;
+    border-top-color: $navbar-link-active-color;
+    border-bottom-color: $navbar-link-active-color;
   }
 }
 
